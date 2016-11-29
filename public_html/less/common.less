@@ -1,0 +1,159 @@
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background: url('img/main_bg.jpg') no-repeat center;
+    background-size: cover;
+    
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    perspective: 1000;
+    transform: translateZ(0);
+}
+
+.main-wrap {
+    width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    perspective: 1000;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@media (max-width: 1400px) {
+    .main-wrap {
+        width: 100%;
+    }
+}
+
+.content-wrap {
+    width: 1164px;
+    margin: 0 auto;
+    padding-top: 40px;
+}
+
+.main-content {
+    width: 928px;
+    margin: 0 auto;
+    padding-top: 40px;
+    min-height: 640px;
+    position: relative;
+}
+
+.content-header {
+    text-align: center;
+}
+h2 {
+    font-size: 48px;
+    font-family: 'Daxline Light';
+    color: @text-blue;
+    letter-spacing: -0.05em;
+    line-height: 58px;
+
+    .strong {
+        font-family: 'Daxline Bold';
+    }
+
+    .upper {
+        text-transform: uppercase;
+    }
+}
+.sub-text {
+    font-family: "Arial", sans-serif;
+    color: @text-grey;
+    
+    margin-top: 20px;
+    .strong {
+        font-weight: 600;
+    }
+    .blue {
+        color: @text-blue;
+    }
+}
+
+.page-slide {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease;
+    
+    &.active {
+        opacity: 1;
+    }
+
+}
+
+.button {
+    font-family: 'Daxline Bold';
+    font-weight: 500;
+    font-size: 14px;
+    width: auto;
+    padding: 0 25px;
+    min-width: 136px;
+    height: 50px;
+    color: @color-white;
+    text-align: center;
+    
+    z-index: 1;
+    margin: 0 2px;
+    position: relative;
+    cursor: pointer;
+    
+    letter-spacing: -0.021em;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    .text {
+        content: "";
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        letter-spacing: -0.021em;
+        transform: translateY(-2px);
+        backface-visibility: hidden;
+        transition: transform .1s ease;
+        transform-style: preserve-3d;
+    }
+
+    &:hover {
+        .text {
+            transform: translateY(-8px);
+        }
+    }
+    &:active {
+        .text {
+            transform: translateY(-2px);
+        }
+    }
+
+
+    &.dark {
+        background: @button-dark-bottom;
+        .text {
+            background: @button-dark;
+        }
+    }    
+
+    &.light {
+        background: @button-light-bottom;
+        .text {
+            background: @button-light;
+        }
+    }
+}
+
+
+@import "menu";
+@import "footer";

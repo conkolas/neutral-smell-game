@@ -1,0 +1,149 @@
+.page-slide.slide-form {
+    h2 {
+        font-size: 36px;
+        line-height: 42px;
+        letter-spacing: -0.05em;
+    }
+
+    .success-message {
+        font-size: 20px;
+        font-family: 'Daxline Light';
+        color: @text-blue;
+        letter-spacing: -0.05em;
+        line-height: 85px;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 85px;
+        text-align: center;
+        opacity: 0;
+        
+        transition: opacity .3s ease;
+
+        &.active {
+            opacity: 1;
+        }
+    }
+    .product-block {
+        margin-top: 35px;
+        transform: scale(1);
+    }
+
+    .game-zone {
+        margin-top: 30px;
+    }
+
+    .button-block {
+        margin-top: 15px;
+    }
+    .button.submit {
+        transform: scale(1);
+        transition: transform .5s ease;
+    }
+    .button.submit.hide {
+        transform: scale(0);
+    }
+    .button.restart {
+        transform: translateX(0);
+        transition: transform .5s ease;
+        transform-style: preserve-3d;
+        backface-visibility: hidden;
+        perspective: 1000;
+        &.push {
+            transform-style: preserve-3d;
+            backface-visibility: hidden;
+            perspective: 1000;
+            transform: translateX(-68px);
+        }
+    }
+}
+
+.registration-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+    opacity: 1;
+    transform: scale(1);
+    transition: transform .3s ease;
+
+    &.hide {
+        transform: scale(0);
+    }
+
+    .input-wrapper {
+        width: 220px;
+        margin: 0 8px;
+        .input-label {
+            font-family: 'Daxline Bold';
+            font-weight: 900;
+            color: @color-blue;
+            font-size: 14px;
+        }
+        input {
+            width: 100%;
+            -webkit-appearance: none;
+            outline: none;
+            box-shadow: none !important;
+            border: 1px solid #cdd9e1;
+            border-radius: 3px;
+            background: @color-white;
+            
+            font-family: "Arial", sans-serif;
+            font-size: 14px;
+            color: #56606e;
+            
+            padding: 7px 10px;
+            transition: border .3s, background .3s, color .3s ease;
+
+            &:focus {
+                outline: none;
+                box-shadow: none !important;
+                border: 1px solid #aebeca;
+            }
+        }
+        
+        .input-error {
+            font-family: "Arial", sans-serif;
+            font-size: 13px;
+            line-height: 22px;
+            color: #e7445f;
+            margin-top: 10px;
+            padding-left: 30px;
+            position: relative;
+            left: -3px;
+            opacity: 0;
+
+            transition: opacity .3s ease;
+            &:before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 23px;
+                height: 23px;
+
+                border: 1px solid #ed8193;
+                border-radius: 50%;
+                background-color: #f5dede;
+                background-image: data-uri('image/png;base64', '../img/error.png');
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+        }
+        &.error {
+            input {
+                border: 1px solid #ed8193;
+                background: #f5dede;
+                color: #e7445f;
+            }
+
+            .input-error {
+                opacity: 1;
+            }
+        }
+    }
+}

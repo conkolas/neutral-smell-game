@@ -1,0 +1,73 @@
+.slide-result {
+    margin-top: -20px;
+    .game-zone {
+        margin-top: 30px;
+    }
+    .result-text-1, .result-text-2 {
+        display: inline;
+    }
+}
+.odor-block {
+    height: 260px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    .molecule {
+        width: 220px;
+        height: 100%;
+        opacity: 0;
+        transform: translate3D(0,0,0) scale(0);
+        transition: transform .6s 1s ease-in-out;
+        transform-style: preserve-3d;
+        backface-visibility: hidden;
+        perspective: 1000;
+        &.pineapple {
+            background: data-uri('image/png;base64', '../img/odor_mol_pineapple.png') no-repeat center;
+            opacity: 1;
+            transform: translate3D(0,0,0) scale(1);
+        }    
+        &.flower {
+            background: data-uri('image/png;base64', '../img/odor_mol_flower.png') no-repeat center;
+            opacity: 1;
+            transform: translate3D(0,0,0) scale(1);
+        }   
+        &.grape {
+            background: url('img/odor_mol_grape.png') no-repeat center;
+            opacity: 1;
+            transform: translate3D(0,0,0) scale(1);
+        }   
+        &.almond {
+            background: data-uri('image/png;base64', '../img/odor_mol_almond.png') no-repeat center;
+            opacity: 1;
+            transform: translate3D(0,0,0) scale(1);
+        }
+    }
+}
+
+.result-sub-text {
+    font-weight: 700;
+    font-family: "Arial", sans-serif;
+    font-size: 16px;
+    color: @color-grey;
+    text-align: center;
+    margin-top: 20px;
+
+    .upper {
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+
+    .blue {
+        color: @color-blue;
+    }
+}
+
+.button-block {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 20px;
+
+}
